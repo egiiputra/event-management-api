@@ -1,10 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn, Index, OneToMany } from 'typeorm';
+import { Entity, Column, Index, OneToMany, PrimaryColumn } from 'typeorm';
 import { Ticket } from '../../tickets/entities/ticket.entity'
 
 @Entity()
 export class Event {
 
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryColumn('uuid')
   id: string;
 
   @Index()
@@ -53,6 +53,7 @@ export class Event {
   @Column({
     type: 'varchar',
     length: 100,
+    nullable: true
   })
   location_city: string;
 
